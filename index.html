@@ -24,6 +24,10 @@
             justify-content: center;
             gap: 15px;
         }
+        .video-item {
+            text-align: center;
+            width: 200px;
+        }
         .video-thumbnails img {
             width: 200px;
             height: 112px;
@@ -33,6 +37,11 @@
         }
         .video-thumbnails img:hover {
             transform: scale(1.05);
+        }
+        .video-description {
+            margin-top: 8px;
+            font-size: 14px;
+            color: #555;
         }
         #player {
             width: 100%;
@@ -50,82 +59,22 @@
     <div class="category">
         <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
         <div class="video-thumbnails">
-            <img src="https://img.youtube.com/vi/7pdK_jiTZeQ/hqdefault.jpg" alt="ข้อสอบจริง 64" onclick="loadVideo('7pdK_jiTZeQ')">
-            <img src="https://img.youtube.com/vi/U6GGZBc8pNo/hqdefault.jpg" alt="อังกฤษจริง 60" onclick="loadVideo('U6GGZBc8pNo')">
-            <img src="https://img.youtube.com/vi/Pbf0xbKg3Ec/hqdefault.jpg" alt="อบจ เทศบาล อบต พัทยา" onclick="loadVideo('Pbf0xbKg3Ec')">
-            <img src="https://img.youtube.com/vi/iW0ocdeSr6A/hqdefault.jpg" alt="เศรษฐกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
-            <img src="https://img.youtube.com/vi/7WybqNxnUVs/hqdefault.jpg" alt="เทศบาล" onclick="loadVideo('7WybqNxnUVs')">
-            <img src="https://img.youtube.com/vi/AhRzvrPYOCY/hqdefault.jpg" alt="อบจ." onclick="loadVideo('AhRzvrPYOCY')">
-            <img src="https://img.youtube.com/vi/20gvqOTB904/hqdefault.jpg" alt="เทศบาล (เพิ่มเติม)" onclick="loadVideo('20gvqOTB904')">
-            <img src="https://img.youtube.com/vi/xPZa7thsm2I/hqdefault.jpg" alt="แบบรวม กฎหมาย" onclick="loadVideo('xPZa7thsm2I')">
-        </div>
-    </div>
-
-    <!-- หมวดหมู่ที่ 2 -->
-    <div class="category">
-        <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
-        <div class="video-thumbnails">
-            <img src="https://img.youtube.com/vi/BQlAvB69tCg/hqdefault.jpg" alt="คณิต ปี 66" onclick="loadVideo('BQlAvB69tCg')">
-            <img src="https://img.youtube.com/vi/O3lG5NTH9uU/hqdefault.jpg" alt="ตรรกศาสตร์" onclick="loadVideo('O3lG5NTH9uU')">
-            <img src="https://img.youtube.com/vi/ukgncG3gFnw/hqdefault.jpg" alt="ตรรกศาสตร์ 1" onclick="loadVideo('ukgncG3gFnw')">
-        </div>
-    </div>
-
-    <!-- หมวดหมู่ที่ 3 -->
-    <div class="category">
-        <h2>กลุ่มที่ 3: อังกฤษ</h2>
-        <div class="video-thumbnails">
-            <img src="https://img.youtube.com/vi/366FI_Y5HBA/hqdefault.jpg" alt="Grammar กันตาย!" onclick="loadVideo('366FI_Y5HBA')">
-        </div>
-    </div>
-
-    <!-- หมวดหมู่ที่ 4 -->
-    <div class="category">
-        <h2>กลุ่มที่ 4: ภาษาไทย</h2>
-        <div class="video-thumbnails">
-            <img src="https://img.youtube.com/vi/SaM9N0MhM1g/hqdefault.jpg" alt="คำไม่เข้าพวก" onclick="loadVideo('SaM9N0MhM1g')">
-        </div>
-    </div>
-
-    <script>
-        let player;
-
-        // โหลด YouTube IFrame API
-        function loadYouTubeAPI() {
-            const script = document.createElement('script');
-            script.src = "https://www.youtube.com/iframe_api";
-            document.head.appendChild(script);
-        }
-
-        // สร้างตัวเล่นวิดีโอหลังจาก API พร้อมใช้งาน
-        function onYouTubeIframeAPIReady() {
-            player = new YT.Player('player', {
-                height: '390',
-                width: '640',
-                videoId: '7pdK_jiTZeQ', // วิดีโอเริ่มต้น
-                events: {
-                    onReady: onPlayerReady,
-                    onStateChange: onPlayerStateChange
-                }
-            });
-        }
-
-        // ฟังก์ชันสำหรับโหลดวิดีโอใหม่
-        function loadVideo(videoId) {
-            player.loadVideoById(videoId);
-        }
-
-        // อุปกรณ์เสริม: ฟังก์ชันเมื่อ Player พร้อมหรือมีการเปลี่ยนแปลง
-        function onPlayerReady(event) {
-            console.log('Player is ready');
-        }
-
-        function onPlayerStateChange(event) {
-            console.log('Player state changed:', event.data);
-        }
-
-        // โหลด YouTube API เมื่อเปิดหน้า
-        loadYouTubeAPI();
-    </script>
-</body>
-</html>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/7pdK_jiTZeQ/hqdefault.jpg" alt="ข้อสอบจริง 64" onclick="loadVideo('7pdK_jiTZeQ')">
+                <p class="video-description">ข้อสอบจริง 64</p>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/U6GGZBc8pNo/hqdefault.jpg" alt="อังกฤษจริง 60" onclick="loadVideo('U6GGZBc8pNo')">
+                <p class="video-description">อังกฤษจริง 60</p>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/Pbf0xbKg3Ec/hqdefault.jpg" alt="อบจ เทศบาล อบต พัทยา" onclick="loadVideo('Pbf0xbKg3Ec')">
+                <p class="video-description">อบจ เทศบาล อบต พัทยา</p>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/iW0ocdeSr6A/hqdefault.jpg" alt="เศรษฐกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
+                <p class="video-description">เศรษฐกิจ-สังคม-การเมือง</p>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/7WybqNxnUVs/hqdefault.jpg" alt="เทศบาล" onclick="loadVideo('7WybqNxnUVs')">
+                <p class="video-description">เทศบาล
