@@ -3,116 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>แดชบอร์ดวิดีโอ</title>
+    <title>Custom YouTube Video Player</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 0;
+            padding: 20px;
             background-color: #f4f4f4;
-        }
-        header {
-            background-color: #333;
-            color: white;
             text-align: center;
-            padding: 15px 0;
+        }
+        h1, h2 {
+            color: #333;
         }
         .category {
-            margin: 20px;
+            margin-bottom: 30px;
         }
-        .category h2 {
-            color: #333;
-            font-size: 24px;
-        }
-        .video-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .video-card {
-            background-color: #fff;
-            width: 300px;
-            padding: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border-radius: 8px;
-        }
-        .video-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        iframe {
-            width: 100%;
-            height: 200px;
+        .video-list button {
+            padding: 10px 15px;
+            margin: 5px;
             border: none;
-            border-radius: 8px;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .video-list button:hover {
+            background-color: #0056b3;
+        }
+        #player {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px auto;
         }
     </style>
 </head>
 <body>
+    <h1>Custom YouTube Video Player</h1>
+    <div id="player"></div>
 
-<header>
-    <h1>แดชบอร์ดวิดีโอการศึกษาทั่วไป</h1>
-</header>
-
-<div class="category">
-    <h2>กลุ่มที่ 1: ข้อสอบแบรวม</h2>
-    <div class="video-list">
-        <div class="video-card">
-            <h3>ข้อสอบจริง 64</h3>
-            <iframe src="https://www.youtube.com/embed/7pdK_jiTZeQ?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-card">
-            <h3>อังกฤษจริง 60</h3>
-            <iframe src="https://www.youtube.com/embed/U6GGZBc8pNo?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=2" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-card">
-            <h3>อบจ เทศบาล อบต พัทยา</h3>
-            <iframe src="https://www.youtube.com/embed/Pbf0xbKg3Ec?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=3" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-card">
-            <h3>เศรษกิจ-สังคม-การเมือง</h3>
-            <iframe src="https://www.youtube.com/embed/iW0ocdeSr6A?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=4" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- หมวดหมู่ที่ 1 -->
+    <div class="category">
+        <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
+        <div class="video-list">
+            <button onclick="loadVideo('7pdK_jiTZeQ')">ข้อสอบจริง 64</button>
+            <button onclick="loadVideo('U6GGZBc8pNo')">อังกฤษจริง 60</button>
+            <button onclick="loadVideo('Pbf0xbKg3Ec')">อบจ เทศบาล อบต พัทยา</button>
+            <button onclick="loadVideo('iW0ocdeSr6A')">เศรษฐกิจ-สังคม-การเมือง</button>
+            <button onclick="loadVideo('7WybqNxnUVs')">เทศบาล</button>
+            <button onclick="loadVideo('AhRzvrPYOCY')">อบจ.</button>
+            <button onclick="loadVideo('20gvqOTB904')">เทศบาล (เพิ่มเติม)</button>
+            <button onclick="loadVideo('xPZa7thsm2I')">แบบรวม กฎหมาย</button>
         </div>
     </div>
-</div>
 
-<div class="category">
-    <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
-    <div class="video-list">
-        <div class="video-card">
-            <h3>คณิต ปี66 แบบรวม</h3>
-            <iframe src="https://www.youtube.com/embed/BQlAvB69tCg?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=5" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-card">
-            <h3>ตรรกศาสตร์</h3>
-            <iframe src="https://www.youtube.com/embed/O3lG5NTH9uU?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=6" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="video-card">
-            <h3>ตรรกศาสตร์ 1</h3>
-            <iframe src="https://www.youtube.com/embed/ukgncG3gFnw?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=16" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- หมวดหมู่ที่ 2 -->
+    <div class="category">
+        <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
+        <div class="video-list">
+            <button onclick="loadVideo('BQlAvB69tCg')">คณิต ปี 66</button>
+            <button onclick="loadVideo('O3lG5NTH9uU')">ตรรกศาสตร์</button>
+            <button onclick="loadVideo('ukgncG3gFnw')">ตรรกศาสตร์ 1</button>
         </div>
     </div>
-</div>
 
-<div class="category">
-    <h2>กลุ่มที่ 3: อังกฤษ</h2>
-    <div class="video-list">
-        <div class="video-card">
-            <h3>Grammar กันตาย!</h3>
-            <iframe src="https://www.youtube.com/embed/366FI_Y5HBA?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=12" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- หมวดหมู่ที่ 3 -->
+    <div class="category">
+        <h2>กลุ่มที่ 3: อังกฤษ</h2>
+        <div class="video-list">
+            <button onclick="loadVideo('366FI_Y5HBA')">Grammar กันตาย!</button>
         </div>
     </div>
-</div>
 
-<div class="category">
-    <h2>กลุ่มที่ 4: ภาษาไทย</h2>
-    <div class="video-list">
-        <div class="video-card">
-            <h3>คำไม่เข้าพวก</h3>
-            <iframe src="https://www.youtube.com/embed/SaM9N0MhM1g?list=PLRZJmZyIBO4LyXGd5zDHcrm_cZHgOcu9-&index=14" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <!-- หมวดหมู่ที่ 4 -->
+    <div class="category">
+        <h2>กลุ่มที่ 4: ภาษาไทย</h2>
+        <div class="video-list">
+            <button onclick="loadVideo('SaM9N0MhM1g')">คำไม่เข้าพวก</button>
         </div>
     </div>
-</div>
 
+    <script>
+        let player;
+
+        // โหลด YouTube IFrame API
+        function loadYouTubeAPI() {
+            const script = document.createElement('script');
+            script.src = "https://www.youtube.com/iframe_api";
+            document.head.appendChild(script);
+        }
+
+        // สร้างตัวเล่นวิดีโอหลังจาก API พร้อมใช้งาน
+        function onYouTubeIframeAPIReady() {
+            player = new YT.Player('player', {
+                height: '390',
+                width: '640',
+                videoId: '7pdK_jiTZeQ', // วิดีโอเริ่มต้น
+                events: {
+                    onReady: onPlayerReady,
+                    onStateChange: onPlayerStateChange
+                }
+            });
+        }
+
+        // ฟังก์ชันสำหรับโหลดวิดีโอใหม่
+        function loadVideo(videoId) {
+            player.loadVideoById(videoId);
+        }
+
+        // อุปกรณ์เสริม: ฟังก์ชันเมื่อ Player พร้อมหรือมีการเปลี่ยนแปลง
+        function onPlayerReady(event) {
+            console.log('Player is ready');
+        }
+
+        function onPlayerStateChange(event) {
+            console.log('Player state changed:', event.data);
+        }
+
+        // โหลด YouTube API เมื่อเปิดหน้า
+        loadYouTubeAPI();
+    </script>
 </body>
 </html>
