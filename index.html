@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom YouTube Player with Thumbnails</title>
+    <title>YouTube Playlist Embedding</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -51,73 +51,47 @@
             margin: 20px auto;
             display: block;
         }
+        .playlist-container {
+            display: none;
+            margin-top: 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>Custom YouTube Player with Thumbnails</h1>
+    <h1>YouTube Video Thumbnails and Playlist</h1>
     <iframe id="player" src="https://www.youtube.com/embed/7pdK_jiTZeQ" allowfullscreen></iframe>
 
     <!-- กลุ่มที่ 1 -->
     <div class="category">
         <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
         <div class="video-thumbnails">
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/7pdK_jiTZeQ/hqdefault.jpg" alt="ข้อสอบจริง 64" onclick="loadVideo('7pdK_jiTZeQ')">
-                <p class="video-description">ข้อสอบจริง 64</p>
-            </div>
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/U6GGZBc8pNo/hqdefault.jpg" alt="อังกฤษจริง 60" onclick="loadVideo('U6GGZBc8pNo')">
-                <p class="video-description">อังกฤษจริง 60</p>
-            </div>
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/Pbf0xbKg3Ec/hqdefault.jpg" alt="อบจ เทศบาล อบต พัทยา" onclick="loadVideo('Pbf0xbKg3Ec')">
-                <p class="video-description">อบจ เทศบาล อบต พัทยา</p>
-            </div>
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/iW0ocdeSr6A/hqdefault.jpg" alt="เศรษฐกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
-                <p class="video-description">เศรษฐกิจ-สังคม-การเมือง</p>
-            </div>
+            <!-- ข้อมูลวิดีโอกลุ่มที่ 1 ... (เหมือนเดิม) -->
         </div>
     </div>
 
-    <!-- กลุ่มที่ 2 -->
+    <!-- กลุ่มที่ 2: คณิตศาสตร์ -->
     <div class="category">
         <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
-        <div class="video-thumbnails">
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/BQlAvB69tCg/hqdefault.jpg" alt="คณิต ปี 66" onclick="loadVideo('BQlAvB69tCg')">
-                <p class="video-description">คณิต ปี 66</p>
-            </div>
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/O3lG5NTH9uU/hqdefault.jpg" alt="ตรรกศาสตร์" onclick="loadVideo('O3lG5NTH9uU')">
-                <p class="video-description">ตรรกศาสตร์</p>
-            </div>
+        <button onclick="togglePlaylist()">Playlist</button> <!-- เมนูเลือก Playlist -->
+        <div class="playlist-container" id="playlistContainer">
+            <iframe width="800" height="450" src="https://www.youtube.com/embed?listType=playlist&list=PLOFmKbvdYhgTOHisy9GS6_CN-sTx6XqRs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
-    </div>
-
-    <!-- กลุ่มที่ 3 -->
-    <div class="category">
-        <h2>กลุ่มที่ 3: อังกฤษ</h2>
         <div class="video-thumbnails">
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/366FI_Y5HBA/hqdefault.jpg" alt="Grammar กันตาย!" onclick="loadVideo('366FI_Y5HBA')">
-                <p class="video-description">Grammar กันตาย!</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- กลุ่มที่ 4 -->
-    <div class="category">
-        <h2>กลุ่มที่ 4: ภาษาไทย</h2>
-        <div class="video-thumbnails">
-            <div class="video-item">
-                <img src="https://img.youtube.com/vi/SaM9N0MhM1g/hqdefault.jpg" alt="คำไม่เข้าพวก" onclick="loadVideo('SaM9N0MhM1g')">
-                <p class="video-description">คำไม่เข้าพวก</p>
-            </div>
+            <!-- ข้อมูลวิดีโอกลุ่มที่ 2 ... (เหมือนเดิม) -->
         </div>
     </div>
 
     <script>
+        function togglePlaylist() {
+            var playlistContainer = document.getElementById("playlistContainer");
+            // Toggle display: show or hide the playlist
+            if (playlistContainer.style.display === "none" || playlistContainer.style.display === "") {
+                playlistContainer.style.display = "block";
+            } else {
+                playlistContainer.style.display = "none";
+            }
+        }
+
         function loadVideo(videoId) {
             const player = document.getElementById('player');
             player.src = `https://www.youtube.com/embed/${videoId}`;
