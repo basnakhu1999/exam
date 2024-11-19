@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YouTube Playlist Embedding</title>
+    <title>YouTube Video Thumbnails and Playlist</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -61,11 +61,42 @@
     <h1>YouTube Video Thumbnails and Playlist</h1>
     <iframe id="player" src="https://www.youtube.com/embed/7pdK_jiTZeQ" allowfullscreen></iframe>
 
-    <!-- กลุ่มที่ 1 -->
+    <!-- กลุ่มที่ 1: ข้อสอบแบบรวม -->
     <div class="category">
         <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
         <div class="video-thumbnails">
-            <!-- ข้อมูลวิดีโอกลุ่มที่ 1 ... (เหมือนเดิม) -->
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/7pdK_jiTZeQ/0.jpg" alt="ข้อสอบจริง 64" onclick="loadVideo('7pdK_jiTZeQ')">
+                <div class="video-description">ข้อสอบจริง 64</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/U6GGZBc8pNo/0.jpg" alt="อังกฤษจริง 60" onclick="loadVideo('U6GGZBc8pNo')">
+                <div class="video-description">อังกฤษจริง 60</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/Pbf0xbKg3Ec/0.jpg" alt="อบจ เทศบาล อบต พัทยา" onclick="loadVideo('Pbf0xbKg3Ec')">
+                <div class="video-description">อบจ เทศบาล อบต พัทยา</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/iW0ocdeSr6A/0.jpg" alt="เศรษกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
+                <div class="video-description">เศรษกิจ-สังคม-การเมือง</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/7WybqNxnUVs/0.jpg" alt="เทศบาล" onclick="loadVideo('7WybqNxnUVs')">
+                <div class="video-description">เทศบาล</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/AhRzvrPYOCY/0.jpg" alt="อบจ." onclick="loadVideo('AhRzvrPYOCY')">
+                <div class="video-description">อบจ.</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/20gvqOTB904/0.jpg" alt="เทศบาล" onclick="loadVideo('20gvqOTB904')">
+                <div class="video-description">เทศบาล</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/xPZa7thsm2I/0.jpg" alt="แบบรวม กฏหมาย(แก้ไขเพิ่มเติม)" onclick="loadVideo('xPZa7thsm2I')">
+                <div class="video-description">แบบรวม กฏหมาย(แก้ไขเพิ่มเติม)</div>
+            </div>
         </div>
     </div>
 
@@ -77,7 +108,40 @@
             <iframe width="800" height="450" src="https://www.youtube.com/embed?listType=playlist&list=PLOFmKbvdYhgTOHisy9GS6_CN-sTx6XqRs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="video-thumbnails">
-            <!-- ข้อมูลวิดีโอกลุ่มที่ 2 ... (เหมือนเดิม) -->
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/BQlAvB69tCg/0.jpg" alt="คณิต ปี66 แบบรวม" onclick="loadVideo('BQlAvB69tCg')">
+                <div class="video-description">คณิต ปี66 แบบรวม</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/O3lG5NTH9uU/0.jpg" alt="ตรรกศาสตร์" onclick="loadVideo('O3lG5NTH9uU')">
+                <div class="video-description">ตรรกศาสตร์</div>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/ukgncG3gFnw/0.jpg" alt="ตรรกศาสตร์ 1" onclick="loadVideo('ukgncG3gFnw')">
+                <div class="video-description">ตรรกศาสตร์ 1</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- กลุ่มที่ 3: อังกฤษ -->
+    <div class="category">
+        <h2>กลุ่มที่ 3: อังกฤษ</h2>
+        <div class="video-thumbnails">
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/366FI_Y5HBA/0.jpg" alt="Grammar กันตาย!" onclick="loadVideo('366FI_Y5HBA')">
+                <div class="video-description">Grammar กันตาย!</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- กลุ่มที่ 4: ภาษาไทย -->
+    <div class="category">
+        <h2>กลุ่มที่ 4: ภาษาไทย</h2>
+        <div class="video-thumbnails">
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/SaM9N0MhM1g/0.jpg" alt="คำไม่เข้าพวก" onclick="loadVideo('SaM9N0MhM1g')">
+                <div class="video-description">คำไม่เข้าพวก</div>
+            </div>
         </div>
     </div>
 
