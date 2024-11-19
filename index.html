@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom YouTube Video Player</title>
+    <title>Custom YouTube Player with Thumbnails</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -18,17 +18,21 @@
         .category {
             margin-bottom: 30px;
         }
-        .video-list button {
-            padding: 10px 15px;
-            margin: 5px;
-            border: none;
-            background-color: #007bff;
-            color: white;
+        .video-thumbnails {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .video-thumbnails img {
+            width: 200px;
+            height: 112px;
             border-radius: 5px;
             cursor: pointer;
+            transition: transform 0.2s;
         }
-        .video-list button:hover {
-            background-color: #0056b3;
+        .video-thumbnails img:hover {
+            transform: scale(1.05);
         }
         #player {
             width: 100%;
@@ -39,47 +43,47 @@
     </style>
 </head>
 <body>
-    <h1>Custom YouTube Video Player</h1>
+    <h1>Custom YouTube Player with Thumbnails</h1>
     <div id="player"></div>
 
     <!-- หมวดหมู่ที่ 1 -->
     <div class="category">
         <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
-        <div class="video-list">
-            <button onclick="loadVideo('7pdK_jiTZeQ')">ข้อสอบจริง 64</button>
-            <button onclick="loadVideo('U6GGZBc8pNo')">อังกฤษจริง 60</button>
-            <button onclick="loadVideo('Pbf0xbKg3Ec')">อบจ เทศบาล อบต พัทยา</button>
-            <button onclick="loadVideo('iW0ocdeSr6A')">เศรษฐกิจ-สังคม-การเมือง</button>
-            <button onclick="loadVideo('7WybqNxnUVs')">เทศบาล</button>
-            <button onclick="loadVideo('AhRzvrPYOCY')">อบจ.</button>
-            <button onclick="loadVideo('20gvqOTB904')">เทศบาล (เพิ่มเติม)</button>
-            <button onclick="loadVideo('xPZa7thsm2I')">แบบรวม กฎหมาย</button>
+        <div class="video-thumbnails">
+            <img src="https://img.youtube.com/vi/7pdK_jiTZeQ/hqdefault.jpg" alt="ข้อสอบจริง 64" onclick="loadVideo('7pdK_jiTZeQ')">
+            <img src="https://img.youtube.com/vi/U6GGZBc8pNo/hqdefault.jpg" alt="อังกฤษจริง 60" onclick="loadVideo('U6GGZBc8pNo')">
+            <img src="https://img.youtube.com/vi/Pbf0xbKg3Ec/hqdefault.jpg" alt="อบจ เทศบาล อบต พัทยา" onclick="loadVideo('Pbf0xbKg3Ec')">
+            <img src="https://img.youtube.com/vi/iW0ocdeSr6A/hqdefault.jpg" alt="เศรษฐกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
+            <img src="https://img.youtube.com/vi/7WybqNxnUVs/hqdefault.jpg" alt="เทศบาล" onclick="loadVideo('7WybqNxnUVs')">
+            <img src="https://img.youtube.com/vi/AhRzvrPYOCY/hqdefault.jpg" alt="อบจ." onclick="loadVideo('AhRzvrPYOCY')">
+            <img src="https://img.youtube.com/vi/20gvqOTB904/hqdefault.jpg" alt="เทศบาล (เพิ่มเติม)" onclick="loadVideo('20gvqOTB904')">
+            <img src="https://img.youtube.com/vi/xPZa7thsm2I/hqdefault.jpg" alt="แบบรวม กฎหมาย" onclick="loadVideo('xPZa7thsm2I')">
         </div>
     </div>
 
     <!-- หมวดหมู่ที่ 2 -->
     <div class="category">
         <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
-        <div class="video-list">
-            <button onclick="loadVideo('BQlAvB69tCg')">คณิต ปี 66</button>
-            <button onclick="loadVideo('O3lG5NTH9uU')">ตรรกศาสตร์</button>
-            <button onclick="loadVideo('ukgncG3gFnw')">ตรรกศาสตร์ 1</button>
+        <div class="video-thumbnails">
+            <img src="https://img.youtube.com/vi/BQlAvB69tCg/hqdefault.jpg" alt="คณิต ปี 66" onclick="loadVideo('BQlAvB69tCg')">
+            <img src="https://img.youtube.com/vi/O3lG5NTH9uU/hqdefault.jpg" alt="ตรรกศาสตร์" onclick="loadVideo('O3lG5NTH9uU')">
+            <img src="https://img.youtube.com/vi/ukgncG3gFnw/hqdefault.jpg" alt="ตรรกศาสตร์ 1" onclick="loadVideo('ukgncG3gFnw')">
         </div>
     </div>
 
     <!-- หมวดหมู่ที่ 3 -->
     <div class="category">
         <h2>กลุ่มที่ 3: อังกฤษ</h2>
-        <div class="video-list">
-            <button onclick="loadVideo('366FI_Y5HBA')">Grammar กันตาย!</button>
+        <div class="video-thumbnails">
+            <img src="https://img.youtube.com/vi/366FI_Y5HBA/hqdefault.jpg" alt="Grammar กันตาย!" onclick="loadVideo('366FI_Y5HBA')">
         </div>
     </div>
 
     <!-- หมวดหมู่ที่ 4 -->
     <div class="category">
         <h2>กลุ่มที่ 4: ภาษาไทย</h2>
-        <div class="video-list">
-            <button onclick="loadVideo('SaM9N0MhM1g')">คำไม่เข้าพวก</button>
+        <div class="video-thumbnails">
+            <img src="https://img.youtube.com/vi/SaM9N0MhM1g/hqdefault.jpg" alt="คำไม่เข้าพวก" onclick="loadVideo('SaM9N0MhM1g')">
         </div>
     </div>
 
