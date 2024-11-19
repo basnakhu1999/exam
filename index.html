@@ -43,19 +43,21 @@
             font-size: 14px;
             color: #555;
         }
-        #player {
+        iframe {
             width: 100%;
             max-width: 800px;
             height: 450px;
+            border: none;
             margin: 20px auto;
+            display: block;
         }
     </style>
 </head>
 <body>
     <h1>Custom YouTube Player with Thumbnails</h1>
-    <div id="player"></div>
+    <iframe id="player" src="https://www.youtube.com/embed/7pdK_jiTZeQ" allowfullscreen></iframe>
 
-    <!-- หมวดหมู่ที่ 1 -->
+    <!-- กลุ่มที่ 1 -->
     <div class="category">
         <h2>กลุ่มที่ 1: ข้อสอบแบบรวม</h2>
         <div class="video-thumbnails">
@@ -75,6 +77,51 @@
                 <img src="https://img.youtube.com/vi/iW0ocdeSr6A/hqdefault.jpg" alt="เศรษฐกิจ-สังคม-การเมือง" onclick="loadVideo('iW0ocdeSr6A')">
                 <p class="video-description">เศรษฐกิจ-สังคม-การเมือง</p>
             </div>
+        </div>
+    </div>
+
+    <!-- กลุ่มที่ 2 -->
+    <div class="category">
+        <h2>กลุ่มที่ 2: คณิตศาสตร์</h2>
+        <div class="video-thumbnails">
             <div class="video-item">
-                <img src="https://img.youtube.com/vi/7WybqNxnUVs/hqdefault.jpg" alt="เทศบาล" onclick="loadVideo('7WybqNxnUVs')">
-                <p class="video-description">เทศบาล
+                <img src="https://img.youtube.com/vi/BQlAvB69tCg/hqdefault.jpg" alt="คณิต ปี 66" onclick="loadVideo('BQlAvB69tCg')">
+                <p class="video-description">คณิต ปี 66</p>
+            </div>
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/O3lG5NTH9uU/hqdefault.jpg" alt="ตรรกศาสตร์" onclick="loadVideo('O3lG5NTH9uU')">
+                <p class="video-description">ตรรกศาสตร์</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- กลุ่มที่ 3 -->
+    <div class="category">
+        <h2>กลุ่มที่ 3: อังกฤษ</h2>
+        <div class="video-thumbnails">
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/366FI_Y5HBA/hqdefault.jpg" alt="Grammar กันตาย!" onclick="loadVideo('366FI_Y5HBA')">
+                <p class="video-description">Grammar กันตาย!</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- กลุ่มที่ 4 -->
+    <div class="category">
+        <h2>กลุ่มที่ 4: ภาษาไทย</h2>
+        <div class="video-thumbnails">
+            <div class="video-item">
+                <img src="https://img.youtube.com/vi/SaM9N0MhM1g/hqdefault.jpg" alt="คำไม่เข้าพวก" onclick="loadVideo('SaM9N0MhM1g')">
+                <p class="video-description">คำไม่เข้าพวก</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function loadVideo(videoId) {
+            const player = document.getElementById('player');
+            player.src = `https://www.youtube.com/embed/${videoId}`;
+        }
+    </script>
+</body>
+</html>
